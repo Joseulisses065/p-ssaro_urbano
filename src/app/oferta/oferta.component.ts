@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {OfertasService} from "../ofertas.service";
+import {OfertasService} from "../core/ofertas.service";
 import {Oferta} from "../shared/oferta.model";
 import {ActivatedRoute, Router} from "@angular/router";
 
@@ -18,7 +18,6 @@ export class OfertaComponent implements OnInit {
   ngOnInit(): void {
     this.ofertasService.getOfertasPorId(this.route.snapshot.params['id']).then((of:Oferta[])=>{
       this.oferta=of[0];
-      console.log(this.oferta)
     }).catch((param: any) => {
       console.log(param)
     })

@@ -3,18 +3,18 @@
 
     <div class="row">
       <div class="col">
-        <h4>{{oferta.descricao_oferta}}</h4>
+        <h4>{{ oferta.descricao_oferta }}</h4>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-6">
         <div class="img_capa">
-          <img [src]="oferta.imagens[0].url"  />
+          <img [src]="oferta.imagens[0].url"/>
         </div>
 
         <div class="thumbnails">
-          <img  *ngFor="let img of oferta.imagens" [src]="img.url" />
+          <img *ngFor="let img of oferta.imagens" [src]="img.url"/>
         </div>
       </div>
 
@@ -28,7 +28,7 @@
 
         <div class="row">
           <div class="col text-center">
-            <h1>R$ 29,90</h1>
+            <h1>R$ {{ oferta.valor }}</h1>
           </div>
         </div>
 
@@ -43,4 +43,19 @@
     </div>
 
   </div>
+  <div class="row mb-5">
+    <div class="col">
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <button class="nav-link active" routerLink="como-usar" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#como-usar" type="button" role="tab"  aria-selected="true">Como usar</button>
+          <button class="nav-link"  routerLink="onde-fica" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#onde-fica" type="button" role="tab" aria-selected="false">Onde fica</button>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+      <router-outlet></router-outlet>
+      </div>
+
+    </div>
+  </div>
+
 </div>
